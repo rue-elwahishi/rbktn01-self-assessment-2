@@ -29,9 +29,31 @@
   */
 
 var Tree = function(value) {
+
   this.value = value;
   this.children = [];
 };
+ 
+ Tree.prototype.addChild = function(value){
+  this.children.push(Tree(value))
+ }
+
+ Tree.prototype.map = function(func){
+  func(this.children, this.value)
+  for(var key in this.children){
+    if(this.children[key] === this.value){
+      return this.children[key]
+    }
+
+  }
+     map(func);
+    
+  } 
+ // .map(function(){
+ //  return value * v
+ // })
+
+
 
 
 
